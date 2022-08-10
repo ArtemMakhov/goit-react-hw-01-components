@@ -3,7 +3,7 @@ import { Box } from '../Box';
 import { Title, StatList,StatItem,Label, Percentage} from './Statistics.styled';
 
 
-export const Statistics = ({ title = null, stats }) => {
+export const Statistics = ({ title , stats }) => {
     return (
         <Box
             display="flex"

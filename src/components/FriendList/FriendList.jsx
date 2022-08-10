@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import { Box } from '../Box';
 import { FriendListItem } from '../FriendListItem/FriendListItem';
 
@@ -18,12 +17,18 @@ export const FriendList = ({ friends }) => {
             border="normal"
             borderColor="black"
         >
-            <FriendListItem friends={friends} />
+            {friends.map(({ id, avatar, name, isOnline }) => (
+                <FriendListItem
+                    key={id}
+                    avatar={avatar}
+                    name={name}
+                    isOnline={isOnline} />
+            ))}
             
-    </Box>
-    )   
+        </Box>
+    );
     
-}
+};
 
 FriendList.propTypes = {
     friends: PropTypes.arrayOf(
